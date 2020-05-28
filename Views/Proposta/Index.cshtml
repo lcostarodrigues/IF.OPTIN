@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Propostas";
+}
+<br />
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="index.html">Cadastro de Propostas</a>
+    </li>
+    <li class="breadcrumb-item active">Análise de RG ou CNH</li>
+</ol>
+<div class="row" style="align-content:center">
+    <div class="col-md-3 pull-left">
+        <img src="~/Images/logo_itau.PNG" style="height:65px;width:65px" />
+    </div>
+    <div class="col-md-6" style="align-content:center">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Controle OPT-IN Cartões</h3>
+    </div>
+    <div class="col-md-3 pull-right">
+        <img src="~/Images/new_logo.PNG" style="padding-right:0px; padding-left:80px" />
+    </div>
+</div>
+<form id="frmCadastro" data-toggle="validator" role="form">
+    <div class="row">
+        <div class="form-group col-md-4 has-feedback">
+            <label for="txtNumProposta"><strong>Número da Proposta:</strong></label>
+            <input type="text" class="form-control" id="txtNumProposta" name="txtNumProposta" placeholder="Número da proposta" data-error="Informe o número da proposta" required />
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group col-md-4 has-feedback">
+            <label for="txtCpf"><strong>CPF:</strong></label>
+            <input type="text" class="form-control" id="txtCpf" name="txtCpf" placeholder="Número do CPF" data-error="Informe o número do CPF" required />
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group col-md-4 has-feedback" id="datetimepicker1">
+            <label for=""><strong>Data da Proposta:</strong></label>
+            <input type="text" class="form-control" id="txtDataProposta" name="txtDataProposta" placeholder="___/___/_____" data-error="Informe a data" required />
+            <div class="help-block with-errors"></div>
+        </div>
+    </div>
+    <div class="row">
+        @*<div class="form-group col-md-4">
+            <label><strong>Documento:</strong></label>
+            <select class="form-control" id="tipoDoc">
+                <option value="0">Selecione...</option>
+                <option value="rg">RG ou CNH</option>
+                <option value="termo">Termo Lista de espera</option>
+            </select>
+
+        </div>*@
+        <div class="form-group col-md-4">
+            <label><strong>Termo:</strong></label>
+            <select class="form-control" id="Termo">
+                <option value="0">Selecione...</option>
+                <option value="1">Termo OK</option>
+                <option value="2">Termo não OK</option>
+            </select>
+        </div>
+        <div class="form-group col-md-8">
+            <label><strong>Situação:</strong></label>
+            <select class="form-control" id="Situacao">
+                <option value="0">Selecione...</option>
+                <option value="1">Não foi digitalizado/enviado RG (1a opção) ou CNH (2a opção)</option>
+                <option value="2">Imagem ilegível</option>
+                <option value="3">Documento divergente</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label><strong>Fatura Digital:</strong></label>
+            <select class="form-control" id="FaturaDigital">
+                <option value="0">Selecione...</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+                <option value="3">Não se Aplica</option>
+            </select>
+        </div>
+        <div class="form-group col-md-8">
+            <label><strong>Observação:</strong></label>
+            <select class="form-control" id="Observacao">
+                <option value="0">Selecione...</option>
+                <option value="1">Falta Documentação</option>
+                <option value="2">Imagem Ruim</option>
+                <option value="3">Documento divergente (outro CPF)</option>
+                <option value="4">Documento não aceito (foi digitalizado um documento diferente de RG ou CNH)</option>
+                <option value="5">Documento digitalizado parcialmente (só frente, ou só verso)</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        @*<div class="col-md-1" style="padding-right:75px">
+            <button class="btn btn-primary" id="btnGravar"><span class="fa fa-save"></span> Gravar</button>
+        </div>*@
+        <div class="col-md-1 pull-right">
+            <button class="btn btn-success" id="btnEtapa">Termo Lista de espera <span class="fa fa-arrow-right"></span></button>
+            @*<button class="btn btn-danger" id="btnCancelar"><span class="fa fa-closed-captioning"></span> Cancelar</button>*@
+        </div>
+    </div>
+</form>
+
+
